@@ -1,0 +1,13 @@
+{
+    "name": "coite_imobiliaria",
+    "description": "Empresa de imóveis",
+    "authors": [
+        {
+            "name": "Marc8s",
+            "email": "marcus.ecomp@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8"
+    }
+}
