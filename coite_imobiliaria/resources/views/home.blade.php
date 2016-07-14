@@ -9,7 +9,7 @@
                     Área Administrativa
                 </div>
                 <div class="panel-body">
-                    <a href="#">Adicionar Imóvel</a></br>
+                    <a href="imovel/create">Adicionar Imóvel</a></br>
                     <a href="#">Adicionar Corretor</a></br>                    
                 </div>
             </div>

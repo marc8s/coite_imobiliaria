@@ -27,4 +27,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::auth();
 
 
+Route::controller('imovel', 'ImovelController');
+
 
