@@ -29,6 +29,11 @@ class ImovelController extends Controller
 	
 	public function postStore(Request $request){
 		$imovel = new Imovel();
+			
+		$nome_tipo_imovel = $request->get('imovel_tipo');	
+		$imovel_tipo = Imovel_tipo::findOrFail($nome_tipo_imovel);
+
+		$imovel->id_tipo_imovel = $imovel_tipo->id;
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
 		$imovel->cozinhas = $request->get('cozinhas');
