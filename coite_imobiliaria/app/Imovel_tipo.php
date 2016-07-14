@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contato extends Model
+class Imovel_tipo extends Model
 {
+    protected $table = 'imovel_tipo';
     protected $fillable = [
-		'id_corretor',
-		'telefone'
+		'tipo_imovel'
 	];
 }
