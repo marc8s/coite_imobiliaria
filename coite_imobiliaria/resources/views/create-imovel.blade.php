@@ -48,6 +48,9 @@
 
 						{{Form::label('descricao', 'Descrição')}}
 						{{Form::input('longtext', 'descricao', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descricao do Imóvel'])}}
+
+						{{Form::label('imovel_tipo', 'Tipo do Imóvel')}}
+						{{ Form::select('imovel_tipo', $imovel_tipos) }}
 																
 						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
 							

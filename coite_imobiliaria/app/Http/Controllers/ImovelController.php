@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Imovel;
+use App\Imovel_tipo;
 
 class ImovelController extends Controller
 {
@@ -14,15 +15,16 @@ class ImovelController extends Controller
 		return view('indexRadialistas', compact('radialistas'));
 	}
 	*/	
-	public function getCreate(){
-		/*$respostas_booleanas = Category::lists('Sim', 'Não');
+	public function getCreate(){		
+		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+		//$imovel_tipos = array('' => 'Selecione o tipo do imóvel') + Imovel_tipo::lists('tipo_imovel', 'id');
 		return view('create-imovel', [
-        	'respostas_booleanas' => $respostas_booleanas,
+        	'imovel_tipos' => $imovel_tipos,
                       
             
         ]);
-*/
-        return view('create-imovel');
+
+        //return view('create-imovel');
 	}
 	
 	public function postStore(Request $request){
