@@ -4,6 +4,7 @@
 * Criação da area administrativa
 * Criação de migrations para as tabelas do banco de dados
 * Seeder Imoveis
+* Lista imoveis na Pagina welcome
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa

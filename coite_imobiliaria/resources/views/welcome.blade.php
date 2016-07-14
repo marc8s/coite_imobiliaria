@@ -8,7 +8,9 @@
                 <div class="panel-heading">Encontre seu imóvel</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    @foreach($imoveis as $imovel) 
+                        {{$imovel -> titulo }} </br>             
+                    @endforeach
                 </div>
             </div>
         </div>

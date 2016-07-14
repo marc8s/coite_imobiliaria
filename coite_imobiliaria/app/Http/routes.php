@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/home', 'HomeController@index');
 // Authentication routes...
@@ -28,5 +28,6 @@ Route::auth();
 
 
 Route::controller('imovel', 'ImovelController');
+Route::controller('/', 'WelcomeController');
 
 
