@@ -23,13 +23,14 @@ class ImovelSeeder extends Seeder
 				'id_negociacao' => '2',
 				'id_tipo_imovel' => '2',
 				'id_views' => '2',				
-				'mezanino' => '2',
+				'mezanino' => '0',
 				'quartos' => '2',
-				'recepcao' => '2',
+				'recepcao' => '0',
 				'salas' => '2',
 				'titulo' => 'Casa em condominio',
 				'vagas_de_estacionamento' => '2',
-				'valor' => '100,00'
+				'valor_aluguel' => '100.00',
+				'valor_venda' => '100000.00'
 			],
 			1 => [
 				
@@ -37,19 +38,20 @@ class ImovelSeeder extends Seeder
 				'banheiros'=> '2',
 				'cozinhas' => '2',				
 				'descricao' => 'ÓTIMO APARTAMENTO; 2 QUARTOS; SALA; COZINHA; BANHEIRO SOCIAL; ÁREA DE SERVIÇO; PORTARIA 24 HORAS; ÁREA DE LAZER; ÓTIMA LOCALIZAÇÃO; RUA MUITO TRANQUILA; LOCAL DE FÁCIL ACESSO',				
-				'garagem' => '2',
+				'garagem' => '0',
 				'id_bairro' => '2',
 				'id_construtora' => '2',
 				'id_negociacao' => '2',
 				'id_tipo_imovel' => '2',
 				'id_views' => '2',				
-				'mezanino' => '2',
+				'mezanino' => '0',
 				'quartos' => '2',
-				'recepcao' => '2',
+				'recepcao' => '1',
 				'salas' => '2',
 				'titulo' => 'Apartamento',
 				'vagas_de_estacionamento' => '2',
-				'valor' => '100,00'
+				'valor_aluguel' => '200.00',
+				'valor_venda' => '200000.00'
 			],
 			
 						

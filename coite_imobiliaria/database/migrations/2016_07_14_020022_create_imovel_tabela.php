@@ -24,12 +24,13 @@ class CreateImovelTabela extends Migration
             $table->integer('id_negociacao');
             $table->integer('id_tipo_imovel');
             $table->integer('id_views');
-            $table->integer('mezanino');
+            $table->boolean('mezanino');
             $table->integer('quartos');     
-            $table->integer('recepcao'); 
+            $table->boolean('recepcao'); 
             $table->integer('salas');      
             $table->string('titulo');
-            $table->float('valor'); 
+            $table->float('valor_aluguel'); 
+            $table->float('valor_venda');
             $table->integer('vagas_de_estacionamento');           
             
             $table->rememberToken();

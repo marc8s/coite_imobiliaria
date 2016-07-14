@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
+use App\Imovel;
 
 class ImovelController extends Controller
 {
@@ -14,15 +15,33 @@ class ImovelController extends Controller
 	}
 	*/	
 	public function getCreate(){
-		return view('create-imovel');
+		/*$respostas_booleanas = Category::lists('Sim', 'Não');
+		return view('create-imovel', [
+        	'respostas_booleanas' => $respostas_booleanas,
+                      
+            
+        ]);
+*/
+        return view('create-imovel');
 	}
-	//armazena o radialista
-	/*public function postStore(Request $request){
-		$radialista = new Radialista();
-		$radialista = $radialista -> create($request->all());		
-		\Session::flash('mensagem_sucesso', 'Radialista cadastrado com sucesso!');		
-		return Redirect::to('radialistas/create');
-	}
+	
+	public function postStore(Request $request){
+		$imovel = new Imovel();
+		$imovel->area = $request->get('area');
+		$imovel->banheiros = $request->get('banheiros');
+		$imovel->cozinhas = $request->get('cozinhas');
+		$imovel->descricao = $request->get('descricao');
+		$imovel->garagem = $request->get('garagem');
+		$imovel->mezanino = $request->get('mezanino');
+		$imovel->quartos = $request->get('quartos');
+		$imovel->recepcao = $request->get('recepcao');
+		$imovel->salas = $request->get('salas');
+		$imovel->titulo = $request->get('titulo');
+		$imovel->push();
+		//$radialista = $radialista -> create($request->all());		
+		\Session::flash('mensagem_sucesso', 'Imovel cadastrado com sucesso!');		
+		return Redirect::to('home');
+	}/*
 	
 	//carregar um radialista especifico pra edição
 	public function getEdit($id){

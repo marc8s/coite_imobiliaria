@@ -23,7 +23,8 @@ class Imovel extends Model
 		'recepcao',		
 		'salas',
 		'titulo',
-		'valor',
+		'valor_aluguel',
+		'valor_venda',
 		'vagas_de_estacionamento'
 		
 	];
