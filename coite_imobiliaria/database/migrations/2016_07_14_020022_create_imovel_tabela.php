@@ -23,6 +23,7 @@ class CreateImovelTabela extends Migration
             $table->integer('id_construtora');
             $table->integer('id_negociacao');
             $table->integer('id_tipo_imovel');
+            $table->integer('id_views');
             $table->integer('mezanino');
             $table->integer('quartos');     
             $table->integer('recepcao'); 
