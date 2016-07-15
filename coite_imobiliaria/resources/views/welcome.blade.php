@@ -9,7 +9,10 @@
                     Encontre seu imóvel
                     <!--<a href="imovel/busca/1">Tipo</a> -->
                     {{ Form::open(['url' => 'imovel/busca']) }}
+                        {{ Form::select('cidade', $cidades,null, ['placeholder' => 'Cidade']) }}
+                        {{ Form::select('bairro', $bairros,null, ['placeholder' => 'Bairro']) }}
                         {{ Form::select('imovel_tipo', $imovel_tipos,null, ['placeholder' => 'Tipo']) }}
+                        {{ Form::select('negociacao', $negociacoes,null, ['placeholder' => 'Negócio']) }}
                         {{Form::submit('buscar', ['class' => 'btn btn-primary'] )}}                            
                     {{ Form::close() }}
                 </div>

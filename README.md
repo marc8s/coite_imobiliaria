@@ -16,6 +16,7 @@
 * inserir bairros pela view
 * View show-imovel 
 * Buscar imoveis pelo tipo
+* Menu da busca
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
@@ -25,6 +26,8 @@
 * edição de imoveis
 * contabilização das views de um imovel
 * excluir bairros de uma cidade que for excluida
+* buscar por valor
+* buscar por codigo
 
 
 #DOING

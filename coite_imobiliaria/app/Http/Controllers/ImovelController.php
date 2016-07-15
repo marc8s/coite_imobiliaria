@@ -17,15 +17,23 @@ use DB;
 class ImovelController extends Controller
 {
   	public function getIndex(){
+
   		$imoveis = Imovel::get();
+
         $imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+        $bairros = Bairro::lists('nome_bairro', 'id');
+		$cidades = Cidade::lists('nome_cidade', 'id');
+		$negociacoes = Negociacao::lists('tipo_negociacao', 'id');
+
         return view('welcome', [        	
             'imoveis' => $imoveis,
-            'imovel_tipos' => $imovel_tipos          
-            
+            'imovel_tipos' => $imovel_tipos,          
+            'bairros' => $bairros,
+        	'cidades' => $cidades,        	
+        	'negociacoes' => $negociacoes
         ]);
   	} 
-  	
+
 	public function getCreate(){		
 		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
 		$bairros = Bairro::lists('nome_bairro', 'id');
@@ -114,10 +122,18 @@ class ImovelController extends Controller
 	public function postBusca(Request $request){
 		$id_tipo_imovel = $request->get('imovel_tipo');
 		$imoveis_filtro_tipo_imovel = DB::table('imovel')->where('id_tipo_imovel', $id_tipo_imovel)->get();
+
 		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+		$bairros = Bairro::lists('nome_bairro', 'id');
+		$cidades = Cidade::lists('nome_cidade', 'id');
+		$negociacoes = Negociacao::lists('tipo_negociacao', 'id');
+
 		return view('welcome', [        	
-            'imoveis' => $imoveis_filtro_tipo_imovel,          
-            'imovel_tipos' => $imovel_tipos
+            'imoveis' => $imoveis,
+            'imovel_tipos' => $imovel_tipos,          
+            'bairros' => $bairros,
+        	'cidades' => $cidades,        	
+        	'negociacoes' => $negociacoes
         ]);
 	}
 	
