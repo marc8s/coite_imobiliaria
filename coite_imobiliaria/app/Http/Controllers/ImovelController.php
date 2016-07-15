@@ -60,9 +60,27 @@ class ImovelController extends Controller
 			$construtora->save();			
 		}
 
+		$nome_cidade = $request->get('cidade');	
+		$cidade = Cidade::find($nome_cidade);
+		if(empty($cidade)){
+			$cidade = new Cidade();
+			$cidade->nome_cidade = $request->get('cidade');
+			$cidade->save();			
+		}
+
+		$nome_bairro = $request->get('bairro');	
+		$bairro = Cidade::find($nome_bairro);
+		if(empty($bairro)){
+			$bairro = new Bairro();
+			$bairro->nome_bairro = $request->get('bairro');
+			$bairro->id_cidade = $cidade->id;
+			$bairro->save();			
+		}
+
 		$imovel->id_tipo_imovel = $imovel_tipo->id;
 		$imovel->id_negociacao = $negociacao->id;
 		$imovel->id_construtora = $construtora->id;
+		$imovel->id_bairro = $bairro->id;
 
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');

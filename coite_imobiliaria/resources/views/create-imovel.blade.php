@@ -9,6 +9,8 @@ $(document).ready(function(){
     var novo_imovel_tipo = '<label style="display: block">Tipo do Imóvel: <input type="text" id="imovel_tipo" name="imovel_tipo"/> <a href="#" class="remove">X</a></label>'; 
     var novo_negociacao = '<label style="display: block">Tipo do Negócio: <input type="text" id="negociacao" name="negociacao"/> <a href="#" class="remove">X</a></label>';  
     var novo_construtora = '<label style="display: block">Construtora: <input type="text" id="construtora" name="construtora"/> <a href="#" class="remove">X</a></label>';  
+    var novo_cidade = '<label style="display: block">Cidade: <input type="text" id="cidade" name="cidade"/> <a href="#" class="remove">X</a></label>'; 
+    var novo_bairro = '<label style="display: block">Bairro: <input type="text" id="bairro" name="bairro"/> <a href="#" class="remove">X</a></label>'; 
      
     $("input[name='novo_tipo_imovel']").click(function( e ){  
         $('#inputs_adicionais_tipo_imovel').append( novo_imovel_tipo );  
@@ -18,6 +20,12 @@ $(document).ready(function(){
     }); 
     $("input[name='novo_construtora']").click(function( e ){  
         $('#inputs_adicionais_construtora').append( novo_construtora );  
+    }); 
+    $("input[name='novo_cidade']").click(function( e ){  
+        $('#inputs_adicionais_cidade').append( novo_cidade );  
+    }); 
+    $("input[name='novo_bairro']").click(function( e ){  
+        $('#inputs_adicionais_bairro').append( novo_bairro );  
     });  
  
     $('#inputs_adicionais_tipo_imovel').delegate('a','click',function( e ){  
@@ -29,6 +37,14 @@ $(document).ready(function(){
         $( this ).parent('label').remove();  
     });  
     $('#inputs_adicionais_construtora').delegate('a','click',function( e ){  
+        e.preventDefault();  
+        $( this ).parent('label').remove();  
+    }); 
+    $('#inputs_adicionais_cidade').delegate('a','click',function( e ){  
+        e.preventDefault();  
+        $( this ).parent('label').remove();  
+    });  
+    $('#inputs_adicionais_bairro').delegate('a','click',function( e ){  
         e.preventDefault();  
         $( this ).parent('label').remove();  
     });  
@@ -103,6 +119,20 @@ $(document).ready(function(){
 						{{ Form::select('construtora', $construtoras,null, ['placeholder' => 'Selecione a construtora...']) }}
 						{{Form::input('button', 'novo_construtora', 'Adicionar Construtora', ['class' => 'btn'])}}	
 			        	<fieldset id="inputs_adicionais_construtora" style="border: none">  
+			        	</fieldset>	
+
+			        	<!-- CAMPO CIDADE -->
+						{{Form::label('cidade', 'Cidade')}}
+						{{ Form::select('cidade', $cidades,null, ['placeholder' => 'Selecione a cidade...']) }}
+						{{Form::input('button', 'novo_cidade', 'Adicionar Cidade', ['class' => 'btn'])}}	
+			        	<fieldset id="inputs_adicionais_cidade" style="border: none">  
+			        	</fieldset>	
+
+			        	<!-- CAMPO BAIRRO -->
+						{{Form::label('bairro', 'Bairro')}}
+						{{ Form::select('bairro', $bairros,null, ['placeholder' => 'Selecione o bairro...']) }}
+						{{Form::input('button', 'novo_bairro', 'Adicionar Bairro', ['class' => 'btn'])}}	
+			        	<fieldset id="inputs_adicionais_bairro" style="border: none">  
 			        	</fieldset>	
 																
 						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
