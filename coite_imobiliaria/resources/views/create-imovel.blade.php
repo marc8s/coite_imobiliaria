@@ -6,12 +6,12 @@
 <script type="text/javascript">  
 $(document).ready(function(){  
  
-    var input = '<label style="display: block">Nome: <input type="text" name="foto[]" /> <a href="#" class="remove">X</a></label>';  
+    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" name="imovel_tipo" /> <a href="#" class="remove">X</a></label>';  
     $("input[name='novo_tipo']").click(function( e ){  
-        $('#inputs_adicionais').append( input );  
+        $('#inputs_adicionais_tipo_imovel').append( input );  
     });  
  
-    $('#inputs_adicionais').delegate('a','click',function( e ){  
+    $('#inputs_adicionais_tipo_imovel').delegate('a','click',function( e ){  
         e.preventDefault();  
         $( this ).parent('label').remove();  
     });  
@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 						{{Form::input('button', 'novo_tipo', 'Adicionar Tipo', ['class' => 'btn'])}}										
 			              
-			        	<fieldset id="inputs_adicionais" style="border: none">  
+			        	<fieldset id="inputs_adicionais_tipo_imovel" style="border: none">  
 			        	</fieldset>				
 						
 																

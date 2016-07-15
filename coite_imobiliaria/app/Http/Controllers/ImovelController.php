@@ -31,9 +31,14 @@ class ImovelController extends Controller
 		$imovel = new Imovel();
 			
 		$nome_tipo_imovel = $request->get('imovel_tipo');	
-		$imovel_tipo = Imovel_tipo::findOrFail($nome_tipo_imovel);
+		$imovel_tipo = Imovel_tipo::find($nome_tipo_imovel);
+		if(empty($imovel_tipo)){
+			$imovel->id_tipo_imovel = 9;
+		}else{
+			$imovel->id_tipo_imovel = $imovel_tipo->id;
+		}
 
-		$imovel->id_tipo_imovel = $imovel_tipo->id;
+		
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
 		$imovel->cozinhas = $request->get('cozinhas');
