@@ -29,8 +29,6 @@ class ImovelController extends Controller
         	'cidades' => $cidades,
         	'construtoras' => $construtoras,
         	'negociacoes' => $negociacoes
-                      
-            
         ]);
         
 	}
@@ -45,7 +43,19 @@ class ImovelController extends Controller
 			$imovel_tipo->tipo_imovel = $request->get('imovel_tipo');
 			$imovel_tipo->save();			
 		}
+
+		$nome_tipo_negociacao = $request->get('negociacao');	
+		$negociacao = Negociacao::find($nome_tipo_negociacao);
+		if(empty($negociacao)){
+			$negociacao = new Negociacao();
+			$negociacao->tipo_negociacao = $request->get('negociacao');
+			$negociacao->save();			
+		}
+
+
 		$imovel->id_tipo_imovel = $imovel_tipo->id;
+		$imovel->id_negociacao = $negociacao->id;
+		
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
 		$imovel->cozinhas = $request->get('cozinhas');

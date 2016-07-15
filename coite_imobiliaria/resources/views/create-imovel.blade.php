@@ -6,12 +6,21 @@
 <script type="text/javascript">  
 $(document).ready(function(){  
  
-    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" id="imovel_tipo" name="imovel_tipo"/> <a href="#" class="remove">X</a></label>';  
-    $("input[name='novo_tipo']").click(function( e ){  
-        $('#inputs_adicionais_tipo_imovel').append( input );  
+    var novo_imovel_tipo = '<label style="display: block">Tipo do Imóvel: <input type="text" id="imovel_tipo" name="imovel_tipo"/> <a href="#" class="remove">X</a></label>'; 
+    var novo_negociacao = '<label style="display: block">Tipo do Negócio: <input type="text" id="negociacao" name="negociacao"/> <a href="#" class="remove">X</a></label>';  
+     
+    $("input[name='novo_tipo_imovel']").click(function( e ){  
+        $('#inputs_adicionais_tipo_imovel').append( novo_imovel_tipo );  
+    });  
+    $("input[name='novo_tipo_negociacao']").click(function( e ){  
+        $('#inputs_adicionais_negociacoes').append( novo_negociacao );  
     });  
  
     $('#inputs_adicionais_tipo_imovel').delegate('a','click',function( e ){  
+        e.preventDefault();  
+        $( this ).parent('label').remove();  
+    }); 
+    $('#inputs_adicionais_negociacoes').delegate('a','click',function( e ){  
         e.preventDefault();  
         $( this ).parent('label').remove();  
     });  
@@ -67,12 +76,19 @@ $(document).ready(function(){
 						{{Form::label('descricao', 'Descrição')}}
 						{{Form::input('longtext', 'descricao', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descricao do Imóvel'])}}
 
+						<!-- CAMPO TIPO IMOVEL -->
 						{{Form::label('imovel_tipo', 'Tipo do Imóvel')}}
 						{{ Form::select('imovel_tipo', $imovel_tipos,null, ['placeholder' => 'Selecione o tipo...']) }}
-						{{Form::input('button', 'novo_tipo', 'Adicionar Tipo', ['class' => 'btn'])}}								
-			              
+						{{Form::input('button', 'novo_tipo_imovel', 'Adicionar Tipo', ['class' => 'btn'])}}	
 			        	<fieldset id="inputs_adicionais_tipo_imovel" style="border: none">  
-			        	</fieldset>				
+			        	</fieldset>	
+			        	
+			        	<!-- CAMPO TIPO NEGOCIACAO -->
+						{{Form::label('negociacao', 'Tipo do Negócio')}}
+						{{ Form::select('negociacao', $negociacoes,null, ['placeholder' => 'Selecione o tipo...']) }}
+						{{Form::input('button', 'novo_tipo_negociacao', 'Adicionar Tipo', ['class' => 'btn'])}}	
+			        	<fieldset id="inputs_adicionais_negociacoes" style="border: none">  
+			        	</fieldset>					
 						
 						
 																

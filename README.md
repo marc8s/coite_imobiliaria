@@ -10,6 +10,7 @@
 * gravar dados em mais de uma tabela usando a mesma view
 * criar campo de formulário dinamicamente com javascript
 * inserir imovel_tipo pela view
+* inserir tipo negociacao pela view
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
