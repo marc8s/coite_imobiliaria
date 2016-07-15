@@ -8,6 +8,7 @@
 * Adição de imoveis pela view
 * popular dropdown imovel_tipo com base de dados
 * salvar o id_tipo_imovel na tabela imovel
+* criar campo de formulárido dinamicamente com javascript
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
@@ -15,6 +16,7 @@
 * exibir mais dados do imovel no inicio
 * realizar buscas filtradas no inicio
 * inserir imovel_tipo pela view
+* Carregar bairros só da cidade que for selecionada
 
 
 #DOING

@@ -1,6 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>  
+<script type="text/javascript">  
+$(document).ready(function(){  
+ 
+    var input = '<label style="display: block">Nome: <input type="text" name="foto[]" /> <a href="#" class="remove">X</a></label>';  
+    $("input[name='novo_tipo']").click(function( e ){  
+        $('#inputs_adicionais').append( input );  
+    });  
+ 
+    $('#inputs_adicionais').delegate('a','click',function( e ){  
+        e.preventDefault();  
+        $( this ).parent('label').remove();  
+    });  
+ 
+});  
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -50,7 +68,13 @@
 						{{Form::input('longtext', 'descricao', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descricao do Imóvel'])}}
 
 						{{Form::label('imovel_tipo', 'Tipo do Imóvel')}}
-						{{ Form::select('imovel_tipo', $imovel_tipos) }}
+						{{ Form::select('imovel_tipo', $imovel_tipos,null, ['placeholder' => 'Selecione o tipo...']) }}
+
+						{{Form::input('button', 'novo_tipo', 'Adicionar Tipo', ['class' => 'btn'])}}										
+			              
+			        	<fieldset id="inputs_adicionais" style="border: none">  
+			        	</fieldset>				
+						
 																
 						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
 							
