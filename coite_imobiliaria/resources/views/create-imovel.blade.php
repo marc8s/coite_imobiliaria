@@ -6,7 +6,7 @@
 <script type="text/javascript">  
 $(document).ready(function(){  
  
-    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" name="imovel_tipo" /> <a href="#" class="remove">X</a></label>';  
+    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" class="form-control" name="imovel_tipo" id="imovel_tipo"/> <a href="#" class="remove">X</a></label>';  
     $("input[name='novo_tipo']").click(function( e ){  
         $('#inputs_adicionais_tipo_imovel').append( input );  
     });  
