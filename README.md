@@ -14,14 +14,17 @@
 * inserir construtora pela view
 * inserir cidades pela view
 * inserir bairros pela view
+* Transformar os imoveis da pagina welcome em link
+* View show-imovel 
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
-* Transformar os imoveis do inicio em link
 * exibir mais dados do imovel no inicio
 * realizar buscas filtradas no inicio
 * Carregar bairros só da cidade que for selecionada no create-imovel
+* exclusão de imoveis
+* edição de imoveis
 
 
 #DOING
-* View create imoveis
+

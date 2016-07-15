@@ -96,6 +96,11 @@ class ImovelController extends Controller
 			
 		return Redirect::to('home');
 	}	
+
+	public function getShow($id){
+		$imovel = Imovel::findOrFail($id);		
+		return view('show-imovel', ['imovel' => $imovel]);
+	}
 	
 	
 	public function missingMethod($params = array()){

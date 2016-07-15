@@ -5,12 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Encontre seu imóvel</div>
+                <div class="panel-heading"> {{ $imovel->titulo}}</div>
 
                 <div class="panel-body">
-                    @foreach($imoveis as $imovel) 
-                        <a href="imovel/show/{{ $imovel-> id }}">{{$imovel -> titulo }}</a> </br>             
-                    @endforeach
+                    {{ $imovel->descricao}}
                 </div>
             </div>
         </div>
