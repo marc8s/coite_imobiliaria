@@ -18,10 +18,11 @@
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
-* exibir mais dados do imovel no inicio
+* exibir mais dados do imovel no inicio e na view imovel
 * Carregar bairros só da cidade que for selecionada no create-imovel
 * exclusão de imoveis
 * edição de imoveis
+* contabilização das views de um imovel
 
 
 #DOING
