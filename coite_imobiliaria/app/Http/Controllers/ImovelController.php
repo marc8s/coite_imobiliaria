@@ -16,7 +16,16 @@ use DB;
 
 class ImovelController extends Controller
 {
-   
+  	public function getIndex(){
+  		$imoveis = Imovel::get();
+        $imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+        return view('welcome', [        	
+            'imoveis' => $imoveis,
+            'imovel_tipos' => $imovel_tipos          
+            
+        ]);
+  	} 
+  	
 	public function getCreate(){		
 		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
 		$bairros = Bairro::lists('nome_bairro', 'id');

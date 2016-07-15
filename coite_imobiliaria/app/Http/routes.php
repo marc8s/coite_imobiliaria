@@ -28,6 +28,6 @@ Route::auth();
 
 
 Route::controller('imovel', 'ImovelController');
-Route::controller('/', 'WelcomeController');
+Route::controller('/', 'ImovelController');
 
 
