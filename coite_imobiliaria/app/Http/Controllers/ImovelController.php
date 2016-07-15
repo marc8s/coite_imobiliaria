@@ -52,10 +52,18 @@ class ImovelController extends Controller
 			$negociacao->save();			
 		}
 
+		$nome_construtora = $request->get('construtora');	
+		$construtora = Construtora::find($nome_construtora);
+		if(empty($construtora)){
+			$construtora = new Construtora();
+			$construtora->nome_construtora = $request->get('construtora');
+			$construtora->save();			
+		}
 
 		$imovel->id_tipo_imovel = $imovel_tipo->id;
 		$imovel->id_negociacao = $negociacao->id;
-		
+		$imovel->id_construtora = $construtora->id;
+
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
 		$imovel->cozinhas = $request->get('cozinhas');
