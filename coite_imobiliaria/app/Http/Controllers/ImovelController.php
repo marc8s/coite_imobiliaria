@@ -102,6 +102,15 @@ class ImovelController extends Controller
 		return view('show-imovel', ['imovel' => $imovel]);
 	}
 	
+	public function postBusca(Request $request){
+		$id_tipo_imovel = $request->get('imovel_tipo');
+		$imoveis_filtro_tipo_imovel = DB::table('imovel')->where('id_tipo_imovel', $id_tipo_imovel)->get();
+		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+		return view('welcome', [        	
+            'imoveis' => $imoveis_filtro_tipo_imovel,          
+            'imovel_tipos' => $imovel_tipos
+        ]);
+	}
 	
 	public function missingMethod($params = array()){
 		return view('erro404');
