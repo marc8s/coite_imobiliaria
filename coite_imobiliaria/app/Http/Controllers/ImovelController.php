@@ -129,7 +129,7 @@ class ImovelController extends Controller
 		$negociacoes = Negociacao::lists('tipo_negociacao', 'id');
 
 		return view('welcome', [        	
-            'imoveis' => $imoveis,
+            'imoveis' => $imoveis_filtro_tipo_imovel,
             'imovel_tipos' => $imovel_tipos,          
             'bairros' => $bairros,
         	'cidades' => $cidades,        	

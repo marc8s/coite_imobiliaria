@@ -28,6 +28,7 @@
 * excluir bairros de uma cidade que for excluida
 * buscar por valor
 * buscar por codigo
+* criar view adicionar corretor
 
 
 #DOING
