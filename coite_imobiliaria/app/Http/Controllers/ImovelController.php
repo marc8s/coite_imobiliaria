@@ -11,6 +11,7 @@ use App\Bairro;
 use App\Cidade;
 use App\Construtora;
 use App\Negociacao;
+use DB;
 
 
 class ImovelController extends Controller
@@ -40,12 +41,11 @@ class ImovelController extends Controller
 		$nome_tipo_imovel = $request->get('imovel_tipo');	
 		$imovel_tipo = Imovel_tipo::find($nome_tipo_imovel);
 		if(empty($imovel_tipo)){
-			//adicionar o tipo de imovel na tabela imovel_tipo aqui
-		}else{
-			$imovel->id_tipo_imovel = $imovel_tipo->id;
+			$imovel_tipo = new Imovel_tipo();
+			$imovel_tipo->tipo_imovel = $request->get('imovel_tipo');
+			$imovel_tipo->save();			
 		}
-
-		
+		$imovel->id_tipo_imovel = $imovel_tipo->id;
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
 		$imovel->cozinhas = $request->get('cozinhas');
@@ -56,12 +56,10 @@ class ImovelController extends Controller
 		$imovel->recepcao = $request->get('recepcao');
 		$imovel->salas = $request->get('salas');
 		$imovel->titulo = $request->get('titulo');
-		$imovel->push();
-		//$radialista = $radialista -> create($request->all());		
-		\Session::flash('mensagem_sucesso', 'Imovel cadastrado com sucesso!');		
+		$imovel->save();		
+			
 		return Redirect::to('home');
-	}
-	
+	}	
 	
 	
 	public function missingMethod($params = array()){

@@ -7,15 +7,15 @@
 * Lista imoveis na Pagina welcome
 * Adição de imoveis pela view
 * popular dropdown imovel_tipo com base de dados
-* salvar o id_tipo_imovel na tabela imovel
+* gravar dados em mais de uma tabela usando a mesma view
 * criar campo de formulário dinamicamente com javascript
+* inserir imovel_tipo pela view
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
 * Transformar os imoveis do inicio em link
 * exibir mais dados do imovel no inicio
 * realizar buscas filtradas no inicio
-* inserir imovel_tipo pela view
 * Carregar bairros só da cidade que for selecionada
 
 

@@ -6,7 +6,7 @@
 <script type="text/javascript">  
 $(document).ready(function(){  
  
-    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" class="form-control" name="imovel_tipo" id="imovel_tipo"/> <a href="#" class="remove">X</a></label>';  
+    var input = '<label style="display: block">Tipo do Imóvel: <input type="text" id="imovel_tipo" name="imovel_tipo"/> <a href="#" class="remove">X</a></label>';  
     $("input[name='novo_tipo']").click(function( e ){  
         $('#inputs_adicionais_tipo_imovel').append( input );  
     });  
@@ -69,11 +69,11 @@ $(document).ready(function(){
 
 						{{Form::label('imovel_tipo', 'Tipo do Imóvel')}}
 						{{ Form::select('imovel_tipo', $imovel_tipos,null, ['placeholder' => 'Selecione o tipo...']) }}
-
-						{{Form::input('button', 'novo_tipo', 'Adicionar Tipo', ['class' => 'btn'])}}										
+						{{Form::input('button', 'novo_tipo', 'Adicionar Tipo', ['class' => 'btn'])}}								
 			              
 			        	<fieldset id="inputs_adicionais_tipo_imovel" style="border: none">  
 			        	</fieldset>				
+						
 						
 																
 						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
