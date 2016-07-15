@@ -6,7 +6,7 @@
 * Seeder Imoveis
 * Lista imoveis na Pagina welcome
 * Adição de imoveis pela view
-* popular dropdown imovel_tipo com base de dados
+* popular menu dropdown com base de dados
 * gravar dados em mais de uma tabela usando a mesma view
 * criar campo de formulário dinamicamente com javascript
 * inserir imovel_tipo pela view
