@@ -14,6 +14,7 @@ class Imovel extends Model
 		'descricao',
 		'garagem',
 		'id_bairro',
+		'id_cidade',
 		'id_construtora',
 		'id_negociacao',
 		'id_tipo_imovel',

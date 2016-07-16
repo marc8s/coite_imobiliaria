@@ -20,6 +20,7 @@ class CreateImovelTabela extends Migration
             $table->integer('garagem');
             $table->increments('id');
             $table->integer('id_bairro');
+            $table->integer('id_cidade');
             $table->integer('id_construtora');
             $table->integer('id_negociacao');
             $table->integer('id_tipo_imovel');

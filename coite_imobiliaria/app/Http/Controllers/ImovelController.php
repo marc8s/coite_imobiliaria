@@ -98,6 +98,7 @@ class ImovelController extends Controller
 		$imovel->id_negociacao = $negociacao->id;
 		$imovel->id_construtora = $construtora->id;
 		$imovel->id_bairro = $bairro->id;
+		$imovel->id_cidade = $cidade->id;
 
 		$imovel->area = $request->get('area');
 		$imovel->banheiros = $request->get('banheiros');
