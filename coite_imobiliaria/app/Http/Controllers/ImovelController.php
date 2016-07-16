@@ -120,18 +120,26 @@ class ImovelController extends Controller
 	}
 	
 	public function postBusca(Request $request){
-		$id_tipo_imovel = $request->get('imovel_tipo');
+		//$id_tipo_imovel = $request->get('imovel_tipo');
 		$id_cidade = $request->get('cidade');
 		$id_bairro = $request->get('bairro');
-		$id_negociacao = $request->get('negociacao');
-		//SOLUCAO 1
-		//$imoveis_filtro_tipo_imovel = DB::table('imovel')->where('id_tipo_imovel', $id_tipo_imovel)->get();
-		//SOLUCAO 2
-		$imoveis_filtro_tipo_imovel = Imovel::where('id_tipo_imovel', $id_tipo_imovel)
-		    ->where('id_negociacao', $id_negociacao)		    
-		    ->paginate(15);
+		//$id_negociacao = $request->get('negociacao');
+		
+		$callbackSearch = function ($query) use($request)
+		{
+		    if ($request->has('imovel_tipo'))
+		    {
+		        $query->where('id_tipo_imovel', 'like', $request->get('imovel_tipo'));
+		    }
 
+		    if ($request->has('negociacao'))
+		    {
+		        $query->where('id_negociacao', 'like', $request->get('negociacao'));
+		    }
 
+		};
+
+		$imoveis_filtro_tipo_imovel = Imovel::where($callbackSearch)->paginate(15);
 
 		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
 		$bairros = Bairro::lists('nome_bairro', 'id');
