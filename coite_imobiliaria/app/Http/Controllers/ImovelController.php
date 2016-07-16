@@ -241,6 +241,13 @@ class ImovelController extends Controller
         	'negociacoes' => $negociacoes
         ]);
 	}
+
+	public function deleteDestroy($id){
+		$imovel = Imovel::findOrFail($id);
+		$imovel->delete();
+		//\Session::flash('mensagem_sucesso', 'Imovel deletado com sucesso!');
+		return Redirect::to('home');
+	}	
 	
 	public function missingMethod($params = array()){
 		return view('erro404');

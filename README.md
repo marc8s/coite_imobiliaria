@@ -17,6 +17,7 @@
 * View show-imovel
 * Filtro dinâmico de busca com paginação
 * Edição de imoveis
+* Exclusão de imoveis
 
 # TO DO 
 * ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
@@ -28,8 +29,8 @@
 * buscar por codigo
 * criar view adicionar corretor
 * alerta quando busca não retornar resultados
-* corrigir href da view show-imoveis -link para edição
+
 
 
 #DOING
-* exclusão de imoveis
+* corrigir href da view show-imoveis -link para edição
