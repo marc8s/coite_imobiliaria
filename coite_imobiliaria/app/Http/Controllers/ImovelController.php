@@ -121,18 +121,21 @@ class ImovelController extends Controller
 	}
 	
 	public function postBusca(Request $request){
-		//$id_tipo_imovel = $request->get('imovel_tipo');
-		$id_cidade = $request->get('cidade');
-		$id_bairro = $request->get('bairro');
-		//$id_negociacao = $request->get('negociacao');
 		
 		$callbackSearch = function ($query) use($request)
 		{
+		    if ($request->has('cidade'))
+		    {
+		        $query->where('id_cidade', 'like', $request->get('cidade'));
+		    }
+		    if ($request->has('bairro'))
+		    {
+		        $query->where('id_bairro', 'like', $request->get('bairro'));
+		    }
 		    if ($request->has('imovel_tipo'))
 		    {
 		        $query->where('id_tipo_imovel', 'like', $request->get('imovel_tipo'));
 		    }
-
 		    if ($request->has('negociacao'))
 		    {
 		        $query->where('id_negociacao', 'like', $request->get('negociacao'));

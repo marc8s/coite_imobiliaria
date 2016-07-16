@@ -14,14 +14,12 @@
 * inserir construtora pela view
 * inserir cidades pela view
 * inserir bairros pela view
-* View show-imovel 
-* Buscar imoveis pelo tipo
-* Menu da busca
+* View show-imovel
+* Filtro dinâmico de busca com paginação
 
 # TO DO 
 * Ver a questão do bloqueio de acesso na area administrativa
 * exibir mais dados do imovel no inicio e na view imovel
-* Carregar bairros só da cidade que for selecionada no create-imovel
 * exclusão de imoveis
 * edição de imoveis
 * contabilização das views de um imovel
@@ -29,7 +27,8 @@
 * buscar por valor
 * buscar por codigo
 * criar view adicionar corretor
+* alerta quando busca não retornar resultados
 
 
 #DOING
-* realizar buscas filtradas no inicio
+* Carregar bairros só da cidade que for selecionada no create-imovel
