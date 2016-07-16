@@ -119,6 +119,31 @@ class ImovelController extends Controller
 		$imovel = Imovel::findOrFail($id);		
 		return view('show-imovel', ['imovel' => $imovel]);
 	}
+
+	public function getEdit($id){
+		$imovel = Imovel::findOrFail($id);
+		
+		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
+		$bairros = Bairro::lists('nome_bairro', 'id');
+		$cidades = Cidade::lists('nome_cidade', 'id');
+		$construtoras = Construtora::lists('nome_construtora', 'id');
+		$negociacoes = Negociacao::lists('tipo_negociacao', 'id');		
+		return view('create-imovel', [
+			'imovel' => $imovel,
+        	'imovel_tipos' => $imovel_tipos,
+        	'bairros' => $bairros,
+        	'cidades' => $cidades,
+        	'construtoras' => $construtoras,
+        	'negociacoes' => $negociacoes
+        ]);
+	}
+
+	public function patchUpdate($id, Request $request){
+		$imovel = Imovel::findOrFail($id);
+		$imovel->update($request->all());
+		//\Session::flash('mensagem_sucesso', 'Imovel atualizado com sucesso!');
+		return Redirect::to('imovel/show/'.$imovel->id);
+	}
 	
 	public function postBusca(Request $request){
 		

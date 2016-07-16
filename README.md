@@ -18,17 +18,19 @@
 * Filtro dinâmico de busca com paginação
 
 # TO DO 
-* Ver a questão do bloqueio de acesso na area administrativa
+* Ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
 * exibir mais dados do imovel no inicio e na view imovel
 * exclusão de imoveis
-* edição de imoveis
 * contabilização das views de um imovel
+* Carregar bairros só da cidade que for selecionada no create-imovel
 * excluir bairros de uma cidade que for excluida
 * buscar por valor
 * buscar por codigo
 * criar view adicionar corretor
 * alerta quando busca não retornar resultados
+* corrigir href da view show-imoveis -link para edição
 
 
 #DOING
-* Carregar bairros só da cidade que for selecionada no create-imovel
+* edição de imoveis
+* permitir edição dos campos com menu dropdown 

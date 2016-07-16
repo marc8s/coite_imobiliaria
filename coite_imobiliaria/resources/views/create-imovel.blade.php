@@ -57,14 +57,19 @@ $(document).ready(function(){
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Adição de Imóvel 					
+					Imóvel 					
 				</div>				
                 <div class="panel-body">
 					@if(Session::has('mensagem_sucesso'))
 						<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
 					@endif
-										
-					{{ Form::open(['url' => 'imovel/store']) }}
+					
+					@if(Request::is("imovel/edit/*"))
+						{{Form::model($imovel, [ 'method' => 'PATCH', 'url' => 'imovel/update/'.$imovel->id])}}
+					@else
+						{{ Form::open(['url' => 'imovel/store']) }}
+					@endif						
+					<!--{{ Form::open(['url' => 'imovel/store']) }}-->
 					
 						{{Form::label('titulo', 'Titulo')}}
 						{{Form::input('text', 'titulo', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Titulo do Imóvel'])}}
