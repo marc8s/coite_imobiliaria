@@ -139,8 +139,66 @@ class ImovelController extends Controller
 	}
 
 	public function patchUpdate($id, Request $request){
-		$imovel = Imovel::findOrFail($id);
-		$imovel->update($request->all());
+		$imovel = Imovel::findOrFail($id);		
+
+		$nome_tipo_imovel = $request->get('imovel_tipo');	
+		$imovel_tipo = Imovel_tipo::find($nome_tipo_imovel);
+		if(empty($imovel_tipo)){
+			$imovel_tipo = new Imovel_tipo();
+			$imovel_tipo->tipo_imovel = $request->get('imovel_tipo');
+			$imovel_tipo->save();			
+		}
+
+		$nome_tipo_negociacao = $request->get('negociacao');	
+		$negociacao = Negociacao::find($nome_tipo_negociacao);
+		if(empty($negociacao)){
+			$negociacao = new Negociacao();
+			$negociacao->tipo_negociacao = $request->get('negociacao');
+			$negociacao->save();			
+		}
+
+		$nome_construtora = $request->get('construtora');	
+		$construtora = Construtora::find($nome_construtora);
+		if(empty($construtora)){
+			$construtora = new Construtora();
+			$construtora->nome_construtora = $request->get('construtora');
+			$construtora->save();			
+		}
+
+		$nome_cidade = $request->get('cidade');	
+		$cidade = Cidade::find($nome_cidade);
+		if(empty($cidade)){
+			$cidade = new Cidade();
+			$cidade->nome_cidade = $request->get('cidade');
+			$cidade->save();			
+		}
+
+		$nome_bairro = $request->get('bairro');	
+		$bairro = Cidade::find($nome_bairro);
+		if(empty($bairro)){
+			$bairro = new Bairro();
+			$bairro->nome_bairro = $request->get('bairro');
+			$bairro->id_cidade = $cidade->id;
+			$bairro->save();			
+		}
+
+		$imovel->id_tipo_imovel = $imovel_tipo->id;
+		$imovel->id_negociacao = $negociacao->id;
+		$imovel->id_construtora = $construtora->id;
+		$imovel->id_bairro = $bairro->id;
+		$imovel->id_cidade = $cidade->id;
+
+		$imovel->area = $request->get('area');
+		$imovel->banheiros = $request->get('banheiros');
+		$imovel->cozinhas = $request->get('cozinhas');
+		$imovel->descricao = $request->get('descricao');
+		$imovel->garagem = $request->get('garagem');
+		$imovel->mezanino = $request->get('mezanino');
+		$imovel->quartos = $request->get('quartos');
+		$imovel->recepcao = $request->get('recepcao');
+		$imovel->salas = $request->get('salas');
+		$imovel->titulo = $request->get('titulo');
+		$imovel->save();
 		//\Session::flash('mensagem_sucesso', 'Imovel atualizado com sucesso!');
 		return Redirect::to('imovel/show/'.$imovel->id);
 	}

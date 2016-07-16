@@ -6,23 +6,23 @@
 * Seeder Imoveis
 * Lista imoveis na Pagina welcome
 * Adição de imoveis pela view
-* popular menu dropdown com base de dados
-* gravar dados em mais de uma tabela usando a mesma view
-* criar campo de formulário dinamicamente com javascript
-* inserir imovel_tipo pela view
-* inserir tipo negociacao pela view
-* inserir construtora pela view
-* inserir cidades pela view
-* inserir bairros pela view
+* Popular menu dropdown com base de dados
+* Gravar dados em mais de uma tabela usando a mesma view
+* Criar campo de formulário dinamicamente com javascript
+* Inserir imovel_tipo pela view
+* Inserir tipo negociacao pela view
+* Inserir construtora pela view
+* Inserir cidades pela view
+* Inserir bairros pela view
 * View show-imovel
 * Filtro dinâmico de busca com paginação
+* Edição de imoveis
 
 # TO DO 
-* Ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
+* ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
 * exibir mais dados do imovel no inicio e na view imovel
-* exclusão de imoveis
 * contabilização das views de um imovel
-* Carregar bairros só da cidade que for selecionada no create-imovel
+* carregar bairros só da cidade que for selecionada no create-imovel
 * excluir bairros de uma cidade que for excluida
 * buscar por valor
 * buscar por codigo
@@ -32,5 +32,4 @@
 
 
 #DOING
-* edição de imoveis
-* permitir edição dos campos com menu dropdown 
+* exclusão de imoveis
