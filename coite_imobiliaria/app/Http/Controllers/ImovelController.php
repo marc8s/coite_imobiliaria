@@ -121,7 +121,17 @@ class ImovelController extends Controller
 	
 	public function postBusca(Request $request){
 		$id_tipo_imovel = $request->get('imovel_tipo');
-		$imoveis_filtro_tipo_imovel = DB::table('imovel')->where('id_tipo_imovel', $id_tipo_imovel)->get();
+		$id_cidade = $request->get('cidade');
+		$id_bairro = $request->get('bairro');
+		$id_negociacao = $request->get('negociacao');
+		//SOLUCAO 1
+		//$imoveis_filtro_tipo_imovel = DB::table('imovel')->where('id_tipo_imovel', $id_tipo_imovel)->get();
+		//SOLUCAO 2
+		$imoveis_filtro_tipo_imovel = Imovel::where('id_tipo_imovel', $id_tipo_imovel)
+		    ->where('id_negociacao', $id_negociacao)		    
+		    ->paginate(15);
+
+
 
 		$imovel_tipos = Imovel_tipo::lists('tipo_imovel', 'id');
 		$bairros = Bairro::lists('nome_bairro', 'id');
