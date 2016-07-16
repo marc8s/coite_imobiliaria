@@ -19,8 +19,7 @@
 * Edição de imoveis
 * Exclusão de imoveis
 
-# TO DO 
-* ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
+# TO DO
 * exibir mais dados do imovel no inicio e na view imovel
 * contabilização das views de um imovel
 * carregar bairros só da cidade que for selecionada no create-imovel
@@ -33,4 +32,4 @@
 
 
 #DOING
-* corrigir href da view show-imoveis -link para edição
+* ver a questão do bloqueio de acesso na area administrativa - na parte de edição tbm
